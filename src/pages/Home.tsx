@@ -4,9 +4,11 @@ import {
   FileText, ShieldCheck, PenLine, Banknote,
   Phone, MessageCircle, Mail, CheckCircle2,
   ArrowRight, Star, Clock, Lock, TrendingDown, Users, Award,
+  Sparkles, LayoutGrid, ListChecks,
 } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
 import { contact, images } from '@/data/site';
+import { iconColor } from '@/data/iconColors';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -15,6 +17,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 };
 
 const stepIcons = [FileText, ShieldCheck, PenLine, Banknote];
+
+const stepImages = [images.onlineForm, images.analysis, images.signing, images.savings];
 
 const advantageIcons = [Clock, Lock, TrendingDown, Users, Award, CheckCircle2];
 
@@ -39,10 +43,6 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-20">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur-sm border border-white/20 px-4 py-1.5 mb-6 animate-fade-up">
-              <Star className="h-4 w-4 text-gold-300" />
-              <span className="text-sm font-medium text-white">{t.home.badge}</span>
-            </div>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-[1.1] animate-fade-up" style={{ animationDelay: '0.1s' }}>
               {t.home.heroTitle} <span className="text-gold-300">{t.home.heroHighlight}</span>
             </h1>
@@ -81,6 +81,8 @@ export default function Home() {
       <section className="py-24 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
+            icon={Sparkles}
+            iconClass="bg-emerald-500 text-white"
             eyebrow={t.home.advantagesEyebrow}
             title={t.home.advantagesTitle}
             subtitle={t.home.advantagesSubtitle}
@@ -90,7 +92,7 @@ export default function Home() {
               const Icon = advantageIcons[i] || CheckCircle2;
               return (
                 <div key={a.title} className="group rounded-2xl bg-white p-7 shadow-sm border border-gray-100 hover:shadow-xl hover:border-brand-200 transition-all">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors">
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-xl ${iconColor(i).badge} ${iconColor(i).hover} transition-colors`}>
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-5 font-display text-lg font-bold text-brand-900">{a.title}</h3>
@@ -106,6 +108,8 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
+            icon={LayoutGrid}
+            iconClass="bg-amber-500 text-white"
             eyebrow={t.home.servicesEyebrow}
             title={t.home.servicesTitle}
             subtitle={t.home.servicesSubtitle}
@@ -115,7 +119,7 @@ export default function Home() {
               const serviceMeta = [
                 { id: 'perso', icon: 'Wallet', image: images.cards },
                 { id: 'immo', icon: 'Home', image: images.houseKey },
-                { id: 'auto', icon: 'Car', image: images.laptop },
+                { id: 'auto', icon: 'Car', image: images.car },
                 { id: 'rachat', icon: 'RefreshCw', image: images.documents },
                 { id: 'pro', icon: 'Briefcase', image: images.officeHandshake },
                 { id: 'travaux', icon: 'Hammer', image: images.firstHome },
@@ -128,7 +132,7 @@ export default function Home() {
                     <img src={meta.image} alt={s.title} className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className="absolute inset-0 bg-gradient-to-t from-brand-950/70 to-transparent" />
                     <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/90 text-brand-700">
+                      <div className={`flex h-9 w-9 items-center justify-center rounded-lg ${iconColor(i).solid}`}>
                         {Icon && <Icon className="h-5 w-5" />}
                       </div>
                       <h3 className="font-display text-lg font-bold text-white">{s.title}</h3>
@@ -168,6 +172,8 @@ export default function Home() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
             light
+            icon={ListChecks}
+            iconClass="bg-violet-500 text-white"
             eyebrow={t.home.stepsEyebrow}
             title={t.home.stepsTitle}
             subtitle={t.home.stepsSubtitle}
@@ -177,12 +183,18 @@ export default function Home() {
               const Icon = stepIcons[i] || FileText;
               return (
                 <div key={i} className="relative">
-                  <div className="rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 p-7 h-full hover:bg-white/15 transition-colors">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-gold-500 text-white shadow-lg">
-                      <Icon className="h-7 w-7" />
+                  <div className="group rounded-2xl bg-white/10 backdrop-blur-sm border border-white/15 overflow-hidden h-full hover:bg-white/15 transition-colors">
+                    <div className="relative h-36 overflow-hidden">
+                      <img src={stepImages[i]} alt="" loading="lazy" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-brand-950/80 to-transparent" />
                     </div>
-                    <h3 className="mt-5 font-display text-lg font-bold text-white">{step.title}</h3>
-                    <p className="mt-2 text-sm text-white/75 leading-relaxed">{step.desc}</p>
+                    <div className="relative px-7 pb-7 -mt-7">
+                      <div className={`flex h-14 w-14 items-center justify-center rounded-2xl ${iconColor(i).solid} shadow-lg`}>
+                        <Icon className="h-7 w-7" />
+                      </div>
+                      <h3 className="mt-5 font-display text-lg font-bold text-white">{step.title}</h3>
+                      <p className="mt-2 text-sm text-white/75 leading-relaxed">{step.desc}</p>
+                    </div>
                   </div>
                   {i < t.home.steps.length - 1 && (
                     <div className="hidden lg:block absolute top-1/2 -right-4 z-10 text-gold-400">
@@ -271,7 +283,7 @@ export default function Home() {
               className="inline-flex items-center gap-2 rounded-xl bg-white/10 backdrop-blur border border-white/30 px-7 py-4 text-base font-bold text-white hover:bg-white/20 transition-all"
             >
               <Mail className="h-5 w-5" />
-              {t.home.callNow}
+              {t.home.sendEmail}
             </a>
           </div>
         </div>

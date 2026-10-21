@@ -24,6 +24,22 @@ export const images = {
     'https://images.pexels.com/photos/7578990/pexels-photo-7578990.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
   laptop:
     'https://images.pexels.com/photos/7735632/pexels-photo-7735632.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  car:
+    'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  onlineForm:
+    'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  analysis:
+    'https://images.pexels.com/photos/7681091/pexels-photo-7681091.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  signing:
+    'https://images.pexels.com/photos/3760067/pexels-photo-3760067.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  savings:
+    'https://images.pexels.com/photos/3943723/pexels-photo-3943723.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  trust:
+    'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  team:
+    'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
+  charts:
+    'https://images.pexels.com/photos/6801648/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
   cards:
     'https://images.pexels.com/photos/6266627/pexels-photo-6266627.jpeg?auto=compress&cs=tinysrgb&h=700&w=1000',
   houseKey:
@@ -67,7 +83,7 @@ export const services = [
     amount: '3 000 € – 100 000 €',
     duration: '12 à 72 mois',
     rate: 'TAEG dès 3,1 %',
-    image: images.laptop,
+    image: images.car,
   },
   {
     id: 'rachat-credit',

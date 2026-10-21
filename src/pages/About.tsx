@@ -1,13 +1,17 @@
 import { Link } from 'react-router-dom';
 import {
-  Target, Eye, Heart, Award, Users, Shield, Clock, TrendingDown,
+  Target, Eye, Heart, Award, Shield, Clock, TrendingDown,
   ArrowRight, Phone, Star, Quote,
+  BookOpen, History, MessageSquareQuote,
 } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
 import { contact, images } from '@/data/site';
+import { iconColor } from '@/data/iconColors';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const valueIcons = [Shield, Heart, Clock, TrendingDown];
+
+const valueImages = [images.trust, images.team, images.onlineForm, images.charts];
 
 export default function About() {
   const { t } = useLanguage();
@@ -46,6 +50,8 @@ export default function About() {
             </div>
             <div>
               <SectionTitle
+                icon={BookOpen}
+                iconClass="bg-blue-500 text-white"
                 eyebrow={t.about.storyEyebrow}
                 title={t.about.storyTitle}
                 center={false}
@@ -88,6 +94,8 @@ export default function About() {
           </div>
 
           <SectionTitle
+            icon={Heart}
+            iconClass="bg-rose-500 text-white"
             eyebrow={t.about.valuesEyebrow}
             title={t.about.valuesTitle}
           />
@@ -95,12 +103,17 @@ export default function About() {
             {t.about.values.map((v, i) => {
               const Icon = valueIcons[i] || Shield;
               return (
-                <div key={v.title} className="group rounded-2xl bg-white p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center">
-                  <div className="flex h-14 w-14 mx-auto items-center justify-center rounded-2xl bg-brand-50 text-brand-600 group-hover:bg-brand-600 group-hover:text-white transition-colors">
-                    <Icon className="h-7 w-7" />
+                <div key={v.title} className="group rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-xl transition-all text-center overflow-hidden">
+                  <div className="h-36 overflow-hidden">
+                    <img src={valueImages[i]} alt="" loading="lazy" className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700" />
                   </div>
-                  <h3 className="mt-4 font-display text-lg font-bold text-brand-900">{v.title}</h3>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">{v.desc}</p>
+                  <div className="px-6 pb-6 -mt-7 relative">
+                    <div className={`flex h-14 w-14 mx-auto items-center justify-center rounded-2xl ${iconColor(i).badge} ${iconColor(i).hover} ring-4 ring-white transition-colors`}>
+                      <Icon className="h-7 w-7" />
+                    </div>
+                    <h3 className="mt-4 font-display text-lg font-bold text-brand-900">{v.title}</h3>
+                    <p className="mt-2 text-sm text-gray-600 leading-relaxed">{v.desc}</p>
+                  </div>
                 </div>
               );
             })}
@@ -112,6 +125,8 @@ export default function About() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
+            icon={History}
+            iconClass="bg-amber-500 text-white"
             eyebrow={t.about.timelineEyebrow}
             title={t.about.timelineTitle}
           />
@@ -142,6 +157,8 @@ export default function About() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
             light
+            icon={MessageSquareQuote}
+            iconClass="bg-emerald-500 text-white"
             eyebrow={t.about.testimonialsEyebrow}
             title={t.about.testimonialsTitle}
           />

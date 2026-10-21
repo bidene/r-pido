@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import {
   Wallet, Home as HomeIcon, Car, RefreshCw, Briefcase, Hammer,
   CheckCircle2, ArrowRight, Phone, MessageCircle, Clock, TrendingDown,
+  PackageCheck, BadgeCheck,
 } from 'lucide-react';
 import SectionTitle from '@/components/SectionTitle';
 import { contact, images } from '@/data/site';
+import { iconColor } from '@/data/iconColors';
 import { useLanguage } from '@/i18n/LanguageContext';
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -14,7 +16,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 const serviceMeta = [
   { icon: 'Wallet', image: images.cards },
   { icon: 'Home', image: images.houseKey },
-  { icon: 'Car', image: images.laptop },
+  { icon: 'Car', image: images.car },
   { icon: 'RefreshCw', image: images.documents },
   { icon: 'Briefcase', image: images.officeHandshake },
   { icon: 'Hammer', image: images.firstHome },
@@ -61,7 +63,7 @@ export default function Services() {
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
                       <img src={meta.image} alt={s.title} className="w-full h-[360px] object-cover group-hover:scale-105 transition-transform duration-700" />
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-950/40 to-transparent" />
-                      <div className="absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl bg-white/90 text-brand-700 shadow-lg">
+                      <div className={`absolute top-4 left-4 flex h-12 w-12 items-center justify-center rounded-xl ${iconColor(i).solid} shadow-lg`}>
                         {Icon && <Icon className="h-6 w-6" />}
                       </div>
                     </div>
@@ -105,6 +107,8 @@ export default function Services() {
       <section className="py-20 bg-gray-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
+            icon={PackageCheck}
+            iconClass="bg-emerald-500 text-white"
             eyebrow={t.services.includesEyebrow}
             title={t.services.includesTitle}
             subtitle={t.services.includesSubtitle}
@@ -124,6 +128,8 @@ export default function Services() {
       <section className="py-24 bg-white">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <SectionTitle
+            icon={BadgeCheck}
+            iconClass="bg-violet-500 text-white"
             eyebrow={t.services.commitmentsEyebrow}
             title={t.services.commitmentsTitle}
           />

@@ -42,7 +42,6 @@ export type Translation = {
   };
   whatsapp: string;
   home: {
-    badge: string;
     heroTitle: string;
     heroHighlight: string;
     heroDesc: string;
@@ -70,7 +69,6 @@ export type Translation = {
     learnMore: string;
     ctaTitle: string;
     ctaDesc: string;
-    callNow: string;
     sendEmail: string;
   };
   about: {
@@ -186,7 +184,6 @@ export const translations: Record<Lang, Translation> = {
     },
     whatsapp: 'WhatsApp',
     home: {
-      badge: 'N°1 du crédit rapide à Paris',
       heroTitle: 'Votre projet mérite un',
       heroHighlight: 'financement rapide',
       heroDesc: "Prêt personnel, immobilier, auto ou rachat de crédit. Obtenez une réponse de principe en 24 heures et recevez vos fonds en 48h. Simple, transparent et sans engagement.",
@@ -231,7 +228,7 @@ export const translations: Record<Lang, Translation> = {
       learnMore: 'En savoir plus sur nous',
       ctaTitle: 'Prêt à concrétiser votre projet ?',
       ctaDesc: "Contactez-nous dès aujourd'hui et obtenez une réponse de principe en 24 heures. Sans engagement.",
-      callNow: 'Envoyer un email',
+      sendEmail: 'Envoyer un email',
     },
     about: {
       eyebrow: 'À propos de nous',
@@ -292,7 +289,6 @@ export const translations: Record<Lang, Translation> = {
       includesSubtitle: "Quel que soit votre projet, nos engagements restent les mêmes : rapidité, transparence et accompagnement.",
       includes: [
         'Réponse de principe en 24h',
-        'Aucun frais de dossier',
         'Remboursement anticipé sans pénalité',
         'Assurance prêt optionnelle',
         'Conseiller dédié',
@@ -304,7 +300,7 @@ export const translations: Record<Lang, Translation> = {
       response24Label: 'Réponse de principe',
       taeg: '1,8 %',
       taegLabel: 'TAEG dès',
-      noFees: '0 €',
+      noFees: 'Oui',
       noFeesLabel: 'Frais de dossier',
       ctaTitle: 'Une question sur nos services ?',
       ctaDesc: 'Nos conseillers sont à votre écoute pour vous orienter vers la meilleure solution.',
@@ -373,7 +369,6 @@ export const translations: Record<Lang, Translation> = {
     },
     whatsapp: 'WhatsApp',
     home: {
-      badge: '#1 fast credit in Paris',
       heroTitle: 'Your project deserves',
       heroHighlight: 'fast financing',
       heroDesc: 'Personal loan, mortgage, auto loan or credit consolidation. Get a preliminary decision in 24 hours and receive your funds in 48h. Simple, transparent and commitment-free.',
@@ -418,7 +413,7 @@ export const translations: Record<Lang, Translation> = {
       learnMore: 'Learn more about us',
       ctaTitle: 'Ready to make your project happen?',
       ctaDesc: 'Contact us today and get a preliminary decision in 24 hours. No commitment.',
-      callNow: 'Send an email',
+      sendEmail: 'Send an email',
     },
     about: {
       eyebrow: 'About us',
@@ -479,7 +474,6 @@ export const translations: Record<Lang, Translation> = {
       includesSubtitle: 'Whatever your project, our commitments remain the same: speed, transparency and support.',
       includes: [
         'Preliminary decision in 24h',
-        'No application fees',
         'Early repayment without penalty',
         'Optional loan insurance',
         'Dedicated advisor',
@@ -491,7 +485,7 @@ export const translations: Record<Lang, Translation> = {
       response24Label: 'Preliminary decision',
       taeg: '1.8%',
       taegLabel: 'APR from',
-      noFees: '€0',
+      noFees: 'Yes',
       noFeesLabel: 'Application fees',
       ctaTitle: 'A question about our services?',
       ctaDesc: 'Our advisors are available to guide you to the best solution.',
@@ -560,7 +554,6 @@ export const translations: Record<Lang, Translation> = {
     },
     whatsapp: 'WhatsApp',
     home: {
-      badge: 'Nº1 en crédito rápido en París',
       heroTitle: 'Su proyecto merece',
       heroHighlight: 'una financiación rápida',
       heroDesc: 'Préstamo personal, hipoteca, préstamo auto o reagrupación de créditos. Obtenga una respuesta preliminar en 24 horas y reciba sus fondos en 48h. Simple, transparente y sin compromiso.',
@@ -605,7 +598,7 @@ export const translations: Record<Lang, Translation> = {
       learnMore: 'Saber más sobre nosotros',
       ctaTitle: '¿Listo para hacer realidad su proyecto?',
       ctaDesc: 'Contáctenos hoy y obtenga una respuesta preliminar en 24 horas. Sin compromiso.',
-      callNow: 'Enviar un email',
+      sendEmail: 'Enviar un email',
     },
     about: {
       eyebrow: 'Sobre nosotros',
@@ -666,7 +659,6 @@ export const translations: Record<Lang, Translation> = {
       includesSubtitle: 'Sea cual sea su proyecto, nuestros compromisos siguen siendo los mismos: rapidez, transparencia y acompañamiento.',
       includes: [
         'Respuesta preliminar en 24h',
-        'Sin comisiones de apertura',
         'Reembolso anticipado sin penalización',
         'Seguro de préstamo opcional',
         'Asesor dedicado',
@@ -678,7 +670,7 @@ export const translations: Record<Lang, Translation> = {
       response24Label: 'Respuesta preliminar',
       taeg: '1,8%',
       taegLabel: 'TAE desde',
-      noFees: '0 €',
+      noFees: 'Sí',
       noFeesLabel: 'Comisiones de apertura',
       ctaTitle: '¿Una pregunta sobre nuestros servicios?',
       ctaDesc: 'Nuestros asesores están a su disposición para orientarle hacia la mejor solución.',
@@ -747,7 +739,6 @@ export const translations: Record<Lang, Translation> = {
     },
     whatsapp: 'WhatsApp',
     home: {
-      badge: 'Nr. 1 für Schnellkredite in Paris',
       heroTitle: 'Ihr Projekt verdient',
       heroHighlight: 'schnelle Finanzierung',
       heroDesc: 'Persönlicher Kredit, Hypothek, Autokredit oder Kreditaufnahme. Erhalten Sie eine Vorabentscheidung in 24 Stunden und erhalten Sie Ihre Mittel in 48 Std. Einfach, transparent und unverbindlich.',
@@ -792,7 +783,7 @@ export const translations: Record<Lang, Translation> = {
       learnMore: 'Mehr über uns erfahren',
       ctaTitle: 'Bereit, Ihr Projekt zu verwirklichen?',
       ctaDesc: 'Kontaktieren Sie uns noch heute und erhalten Sie eine Vorabentscheidung in 24 Stunden. Unverbindlich.',
-      callNow: 'E-Mail senden',
+      sendEmail: 'E-Mail senden',
     },
     about: {
       eyebrow: 'Über uns',
@@ -853,7 +844,6 @@ export const translations: Record<Lang, Translation> = {
       includesSubtitle: 'Welches Projekt auch immer Sie haben — unsere Verpflichtungen bleiben dieselben: Geschwindigkeit, Transparenz und Betreuung.',
       includes: [
         'Vorabentscheidung in 24 Std.',
-        'Keine Antragsgebühren',
         'Vorzeitige Rückzahlung ohne Strafe',
         'Optionale Kreditversicherung',
         'Persönlicher Berater',
@@ -865,7 +855,7 @@ export const translations: Record<Lang, Translation> = {
       response24Label: 'Vorabentscheidung',
       taeg: '1,8%',
       taegLabel: 'eff. Jahreszins ab',
-      noFees: '0 €',
+      noFees: 'Ja',
       noFeesLabel: 'Antragsgebühren',
       ctaTitle: 'Eine Frage zu unseren Leistungen?',
       ctaDesc: 'Unsere Berater stehen Ihnen zur Verfügung, um Sie zur besten Lösung zu führen.',
@@ -934,7 +924,6 @@ export const translations: Record<Lang, Translation> = {
     },
     whatsapp: 'WhatsApp',
     home: {
-      badge: 'N°1 del credito rapido a Parigi',
       heroTitle: 'Il vostro progetto merita',
       heroHighlight: 'un finanziamento rapido',
       heroDesc: 'Prestito personale, mutuo, prestito auto o consolidamento debiti. Ottenete una risposta preliminare in 24 ore e ricevete i fondi in 48h. Semplice, trasparente e senza impegno.',
@@ -979,7 +968,7 @@ export const translations: Record<Lang, Translation> = {
       learnMore: 'Saperne di più su di noi',
       ctaTitle: 'Pronti a realizzare il vostro progetto?',
       ctaDesc: 'Contattateci oggi e ottenete una risposta preliminare in 24 ore. Senza impegno.',
-      callNow: 'Invia un\'email',
+      sendEmail: 'Invia un\'email',
     },
     about: {
       eyebrow: 'Chi siamo',
@@ -1040,7 +1029,6 @@ export const translations: Record<Lang, Translation> = {
       includesSubtitle: 'Qualunque sia il vostro progetto, i nostri impegni rimangono gli stessi: rapidità, trasparenza e accompagnamento.',
       includes: [
         'Risposta preliminare in 24h',
-        'Nessuna commissione di istruttoria',
         'Rimborso anticipato senza penalità',
         'Assicurazione prestito opzionale',
         'Consulente dedicato',
@@ -1052,7 +1040,7 @@ export const translations: Record<Lang, Translation> = {
       response24Label: 'Risposta preliminare',
       taeg: '1,8%',
       taegLabel: 'TAN dal',
-      noFees: '0 €',
+      noFees: 'Sì',
       noFeesLabel: 'Commissioni di istruttoria',
       ctaTitle: 'Una domanda sui nostri servizi?',
       ctaDesc: 'I nostri consulenti sono a vostra disposizione per indirizzarvi verso la migliore soluzione.',
